@@ -1,0 +1,46 @@
+---
+
+---
+
+<button class="lg:hidden" id="open-menu-btn">
+  <svg
+    class="text-gray-900 dark:text-gray-50 dark:hover:text-gray-300 hover:text-gray-600 transition fade ease-in fill-current w-5 h-5"
+    viewBox="0 0 256 256"
+  >
+    <path
+      d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
+    >
+    </path>
+  </svg>
+</button>
+
+<button class="hidden lg:hidden" id="close-menu-btn">
+  <svg
+    class="text-gray-900 dark:text-gray-50 dark:hover:text-gray-300 hover:text-gray-600 transition fade ease-in fill-current w-5 h-5"
+    viewBox="0 0 256 256"
+  >
+    <path
+      d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"
+    >
+    </path>
+  </svg>
+</button>
+
+<script>
+  const openBtn = document.getElementById("open-menu-btn");
+  const closeBtn = document.getElementById("close-menu-btn");
+
+  const mobileMenu = document.getElementById("mobile-menu");
+  openBtn.addEventListener("click", function () {
+    openBtn.classList.toggle("hidden");
+    closeBtn.classList.toggle("hidden");
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("flex");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    closeBtn.classList.toggle("hidden");
+    openBtn.classList.toggle("hidden");
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
