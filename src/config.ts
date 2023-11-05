@@ -6,3 +6,10 @@ export const links = [
   { url: "/about", label: "About" },
   { url: "/contact", label: "Contact" },
 ];
+export const socialLinks = {
+  youtube: "https://www.youtube.com/@iamashhad",
+  twitter: "https://x.com/iam_ashhad",
+  github: "https://github.com/ashhadahmad",
+  instagram: "https://www.instagram.com/iamashhad/",
+  linkedin: "https://www.linkedin.com/in/ashhadahmad/",
+};
