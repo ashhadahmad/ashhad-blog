@@ -1,0 +1,54 @@
+---
+const { pageTitle } = Astro.props;
+import bgImage from "../images/bg.png";
+import { Image } from "astro:assets";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ashhad Ahmad - Youtuber, Engineer." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{asset 'build/tailwind.css'}}"
+    />
+    <title>{pageTitle}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script type="text/javascript">
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script></head
+  >
+
+  <body class="bg-white dark:bg-[#0A0A0D]">
+    <div
+      class="absolute top-0 overflow-hidden -z-10 w-screen flex justify-center select-none pointer-events-none"
+    >
+      <Image
+        src={bgImage}
+        alt="A bird sitting on a nest of eggs."
+        class="max-w-6xl opacity-70 animate__animated animate__fadeIn"
+      />
+    </div>
+    <div class="w-screen lg:max-w-5xl m-auto flex flex-col">
+      <slot />
+    </div>
+  </body>
+</html>
