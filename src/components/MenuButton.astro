@@ -27,20 +27,22 @@
 </button>
 
 <script>
-  const openBtn = document.getElementById("open-menu-btn");
-  const closeBtn = document.getElementById("close-menu-btn");
+  document.addEventListener("astro:page-load", () => {
+    const openBtn = document.getElementById("open-menu-btn");
+    const closeBtn = document.getElementById("close-menu-btn");
 
-  const mobileMenu = document.getElementById("mobile-menu");
-  openBtn.addEventListener("click", function () {
-    openBtn.classList.toggle("hidden");
-    closeBtn.classList.toggle("hidden");
-    mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("flex");
-  });
+    const mobileMenu = document.getElementById("mobile-menu");
+    openBtn.addEventListener("click", function () {
+      openBtn.classList.toggle("hidden");
+      closeBtn.classList.toggle("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+    });
 
-  closeBtn.addEventListener("click", function () {
-    closeBtn.classList.toggle("hidden");
-    openBtn.classList.toggle("hidden");
-    mobileMenu.classList.toggle("hidden");
+    closeBtn.addEventListener("click", function () {
+      closeBtn.classList.toggle("hidden");
+      openBtn.classList.toggle("hidden");
+      mobileMenu.classList.toggle("hidden");
+    });
   });
 </script>
