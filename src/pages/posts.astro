@@ -1,8 +1,7 @@
 ---
 import PostCard from "../components/PostCard.astro";
+import { pageTitle } from "../config";
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "Ashhad - Engineer, Youtuber";
-const tagline = "I enjoy making videos and writing code, Follow me !";
 const posts = await Astro.glob("./*.mdx");
 const allPosts = posts.sort(function (post_x, post_y) {
   const x = parseInt(post_x.frontmatter.id);

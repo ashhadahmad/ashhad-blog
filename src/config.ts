@@ -1,6 +1,7 @@
 // Header options
 export const siteTitle: string = "Ashhad";
 export const courseSite: string = "";
+export const pageTitle: string = "Ashhad - Youtuber, Engineer";
 export const links = [
   { url: "/", label: "Home" },
   // { url: "/about", label: "About" },

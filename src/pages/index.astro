@@ -1,10 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import PostCard from "../components/PostCard.astro";
-import { posts_on_homepage, socialLinks } from "../config";
+import { pageTitle, posts_on_homepage, socialLinks } from "../config";
 import coverImage from "../images/ashhad.png";
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "Ashhad - Engineer, Youtuber";
 const tagline = "I enjoy making videos and writing code, Follow me !";
 const posts = await Astro.glob("./*.mdx");
 const posts_sorted = posts.sort(function (post_x, post_y) {
