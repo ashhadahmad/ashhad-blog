@@ -1,10 +1,24 @@
 ---
 import { Image } from "astro:assets";
-import { socialLinks } from "../config";
+import PostCard from "../components/PostCard.astro";
+import { posts_on_homepage, socialLinks } from "../config";
 import coverImage from "../images/ashhad.png";
 import Layout from "../layouts/Layout.astro";
 const pageTitle = "Ashhad - Engineer, Youtuber";
 const tagline = "I enjoy making videos and writing code, Follow me !";
+const posts = await Astro.glob("./*.mdx");
+const posts_sorted = posts.sort(function (post_x, post_y) {
+  const x = parseInt(post_x.frontmatter.id);
+  const y = parseInt(post_y.frontmatter.id);
+  if (x < y) {
+    return 1;
+  }
+  if (x > y) {
+    return -1;
+  }
+  return 0;
+});
+const allPosts = posts_sorted.splice(0, posts_on_homepage);
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -191,13 +205,27 @@ const tagline = "I enjoy making videos and writing code, Follow me !";
 
     <div class="mt-16 w-full box-border px-4 lg:px-0">
       <div class="w-100">
-        <p class="uppercase text-lg font-bold tracking-widest text-gray-600">
-          Recent Posts
-        </p>
+        <div class="flex justify-between content-center">
+          <p class="uppercase text-lg font-bold tracking-widest text-gray-600">
+            Recent Posts
+          </p>
+          <p class="uppercase font-bold tracking-widest text-gray-600">
+            <a href="/posts">See More</a>
+          </p>
+        </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <!-- {{#foreach posts}}
-                {{> card}}
-                {{/foreach}} -->
+          {
+            allPosts.map((post) => (
+              <PostCard
+                image={post.frontmatter.image.url}
+                url={post.url}
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                alt={post.frontmatter.alt}
+                id={post.frontmatter.id}
+              />
+            ))
+          }
         </div>
       </div>
     </div>

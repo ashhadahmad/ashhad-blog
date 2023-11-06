@@ -17,3 +17,4 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/ashhadahmad/",
   topmate: "https://topmate.io/ashhad",
 };
+export const posts_on_homepage = 3;

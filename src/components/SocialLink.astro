@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
-const { icon, darkicon, title, link } = Astro.props;
+const { icon, title, link } = Astro.props;
 ---
 
 <a
   href={link}
   target="_blank"
-  class="hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg flex flex-row justify-between transition fade ease-in cursor-pointer select-none"
+  class="hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg flex flex-row justify-between border-2 border-gray-100 dark:border-gray-800 transition fade ease-in cursor-pointer select-none"
 >
   <div class="flex flex-row w-full justify-center content-center">
     <div class="w-16 lg:h-14 flex justify-center">
