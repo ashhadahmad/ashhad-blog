@@ -17,23 +17,21 @@ import { Icon } from "astro-icon";
 </button>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const openBtn = document.getElementById("open-menu-btn");
-    const closeBtn = document.getElementById("close-menu-btn");
+  const openBtn = document.getElementById("open-menu-btn");
+  const closeBtn = document.getElementById("close-menu-btn");
 
-    const mobileMenu = document.getElementById("mobile-menu");
-    openBtn.addEventListener("click", function () {
-      openBtn.classList.toggle("hidden");
-      closeBtn.classList.toggle("hidden");
-      mobileMenu.classList.add("flex");
-      mobileMenu.classList.remove("hidden");
-    });
+  const mobileMenu = document.getElementById("mobile-menu");
+  openBtn.addEventListener("click", function () {
+    openBtn.classList.toggle("hidden");
+    closeBtn.classList.toggle("hidden");
+    mobileMenu.classList.add("flex");
+    mobileMenu.classList.remove("hidden");
+  });
 
-    closeBtn.addEventListener("click", function () {
-      closeBtn.classList.toggle("hidden");
-      openBtn.classList.toggle("hidden");
-      mobileMenu.classList.remove("flex");
-      mobileMenu.classList.add("hidden");
-    });
+  closeBtn.addEventListener("click", function () {
+    closeBtn.classList.toggle("hidden");
+    openBtn.classList.toggle("hidden");
+    mobileMenu.classList.remove("flex");
+    mobileMenu.classList.add("hidden");
   });
 </script>
