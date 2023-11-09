@@ -1,10 +1,10 @@
 ---
 const { pageTitle } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import bgImage from "../images/bg.png";
 import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import bgImage from "../images/bg.png";
 ---
 
 <!doctype html>
@@ -22,17 +22,6 @@ import { Image } from "astro:assets";
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <script type="text/javascript">
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
     <ViewTransitions />
   </head>
 
